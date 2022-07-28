@@ -1,0 +1,72 @@
+<div class="modal__container" id="modal-test-drive">
+    <div class="modal__box">
+        <button class="modal__close js-modal-close">
+            <img src="./img/svg/icon_close.svg" alt="">
+        </button>
+        <div class="modal__wrap">
+            <div class="modal__logo">
+                <img src="./img/content/logo.png" alt="">
+            </div>
+            <div class="modal__title title-lg">
+                Запись на тест-драйв
+            </div>
+            <form class="form modal__form js-form" action="https://jsonplaceholder.typicode.com/users">
+                <label for="phone" class="form__label">
+                    <input type="tel" id="phone" name="phone" autocomplete="false" class="form__input js-input-phone">
+                    <span class="form__place">Телефон </span>
+                    
+                    <span class="form__invalid">Введите корректное значение</span>
+                    <span class="form__error">Поле обязательно для заполнения</span>
+                    <span class="form__error-icon">!</span>
+                    <span class="form__success-field">
+                        <img src="./img/svg/icon_sucess.svg" alt="">
+                    </span>
+                </label>
+
+                <button class="form__btn btn btn_blue text-xsm">
+                    <svg>
+                        <use xlink:href="./img/sprites/sprite.svg#icon_mail"></use>
+                    </svg>
+                    Получить
+                </button>
+                
+                <label for="policy" class="form__policy">
+                    <input type="checkbox" name="policy" id="policy" hidden>
+                    <span class="form__policy-mark">
+                        <svg>
+                            <use xlink:href="./img/sprites/sprite.svg#icon_checked"></use>
+                        </svg>
+                    </span>
+                    <span class="form__policy-text">
+                        Я ознакомился с <a href="#" target="_blank">Политикой обработки персональных данных клиентов</a> и 
+                        <a href="#" target="_blank">Пользовательским соглашением сервисов Инчкейп Россия</a>, принимаю условия Соглашения и согласен с 
+                        <a href="#" target="_blank">обработкой моих персональных данных</a> группой Инчкейп Россия способами 
+                        и для целей указанных в <a href="#" target="_blank">Политике</a> .
+                    </span>
+                    <span class="form__error">Необходимо поставить галочку </span>
+                </label>
+
+                
+                <div class="form__preloader">
+                    <div class="form__preloader-icon">
+                        <img src="./img/svg/preloader-oval.svg" alt="">
+                    </div>
+                </div>
+            </form> 
+
+            <div class="form-success">
+                <div class="form-success__icon">
+                    <img src="./img/svg/icon_sucess.svg" alt="">
+                </div>
+
+                <div class="form-success__title title-md">
+                    Ваша заявка успешно отправлена!
+                </div>
+
+                <div class="form-success__text">
+                    Наш оператор скоро свяжется с вами.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

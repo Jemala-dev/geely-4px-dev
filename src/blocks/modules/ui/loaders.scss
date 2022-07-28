@@ -1,0 +1,49 @@
+@import "main-bx";
+
+.skeleton {
+    background-color: #ededed0f;
+      background: linear-gradient(
+          100deg,
+          #3232320f 40%,
+          #f9f7f712 50%,
+          #3232320f 60%
+        )
+        #3232320f;
+      background-size: 200% 100%;
+      background-position-x: 180%;
+      animation: 1.6s Shine ease-in-out infinite;
+}
+
+@keyframes Shine {
+    to {
+      background-position-x: -20%;
+    }
+}
+
+img[data-src] {
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+
+.bt-spinner {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-top-color: $color_red;
+  border-bottom-color: $color_red;
+  -webkit-animation: 1s spin linear infinite;
+  animation: 1s spin linear infinite;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

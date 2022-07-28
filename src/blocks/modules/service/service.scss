@@ -1,0 +1,96 @@
+@import "main-bx";
+
+.service {
+    position: relative;
+
+    &__img {
+        height: 640px;
+        img {
+            width: 100%;
+        }
+
+        @include below(768px) {
+            height: 700px;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        color: #fff;
+    }
+    
+    &__container {
+        width: 100%;
+        max-width: 1138px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 60px;
+
+        @include below(768px) {
+            padding-top: 30px;
+            max-width: 320px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+
+        @include below(768px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        height: 190px;
+        width: calc(100% / 3);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s linear;
+
+        @include below(768px) {
+            width: 100%;
+            height: 80px;
+            
+        }
+
+        &:not(:last-of-type) {
+            @include below(768px) {
+                border-bottom: 1px solid #9CA9B3;
+            }
+        }
+        
+        &:nth-of-type(-n + 3) {
+            border-bottom: 1px solid #9CA9B3;
+        }
+
+        &:nth-of-type(-n + 2),
+        &:nth-child(4),
+        &:nth-child(5) {
+            border-right: 1px solid #9CA9B3;
+
+            @include below(768px) {
+                border-right: 0;
+            }
+        }
+
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
+    }
+
+   
+}

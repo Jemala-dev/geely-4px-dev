@@ -1,0 +1,111 @@
+@import "main-bx";
+
+.product-card {
+    width: 100%;
+    max-width: 385px;
+    &__head {
+        width: 100%;
+        height: 205px;
+        position: relative;
+    }
+    
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: -15px;
+        z-index: 100;
+        display: flex;
+        padding: 0 6.5px;
+    }
+
+    &__dots-item {
+        flex: auto;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 3.5px;
+        cursor: pointer;
+
+        &.is-active {
+            .product-card__dots-btn {
+                background-color: #0066B2;
+            }
+        }
+    }
+
+    &__dots-btn {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color:  #C0D7E8;
+    }
+
+    &__body {
+        padding: 34px 10px 10px;
+        background-color: #F9F9FA;
+        
+    }
+
+    &__name {
+        margin-bottom: 17px;
+
+        @include below(768px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__props {
+        margin-bottom: 17px;
+    }
+
+    &__props-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 0;
+
+        // @include below(768px) {
+        //     white-space: nowrap;
+        // }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #B0B2B3;
+        }
+    
+        @include below(768px) {
+            padding: 10px 0; 
+        }
+    }
+
+    &__props-left,
+    &__props-right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__props-left {
+        margin-right: 20px;
+    }
+
+    &__props-right {
+        width: 100%;
+        max-width: 130px;
+    }
+
+    &__props-key {
+        color: #B0B2B3;
+        margin-right: 10px;
+    }
+
+    &__btn {
+        width: 100%;
+    }
+}

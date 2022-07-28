@@ -1,0 +1,36 @@
+<section class="section section_pt-60 section_pb-100" id="product">
+    <div class="container">
+        <h2 class="section__title title-lg">КУПИТЕ ОНЛАЙН ИЛИ ОФФЛАЙН</h2>
+
+        <p class="section__text">Автомобили в наличии, звоните
+            <a href="tel:+7(495)2300110">+7 (495) 230-01-10</a>    
+        </p>
+        <div class="product section__product">
+            <div class="product__container">
+                <button class="product__toggle btn btn_blue js-product-filter-toggle">
+                    <span>Фильтр</span> 
+                    <svg>
+                        <use xlink:href="./img/sprites/sprite.svg#icon_filter"></use>
+                    </svg>
+                </button>
+
+                @@include("./filter.html")
+            
+                <div class="product__cards">
+                    @@for (var i = 0; i < 9; i++) {
+                        @@include("../product-card/product-card.html", { mixin: "product__product-card" })
+                    }
+                </div>
+            
+                <div class="product__more">
+                    <button class="text-sm btn btn_white-black">
+                        Показать еще
+                        <svg>
+                            <use xlink:href="./img/sprites/sprite.svg#icon_next"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

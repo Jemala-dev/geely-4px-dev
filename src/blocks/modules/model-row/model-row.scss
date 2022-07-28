@@ -1,0 +1,77 @@
+@import "main-bx";
+
+.model-row {
+    background-color: #F9F9FA;
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px;
+
+        @include below(1024px) {
+            justify-content: flex-start;
+            overflow-y: hidden;
+            overflow-x: auto;
+
+            padding: 20px 0;
+        }
+    } 
+
+    &__item {
+        margin: 0 140px;
+        display: block;
+        cursor: pointer;
+        text-align: center;
+        transition: all .3s linear;
+        &.model-row__item_active {
+            opacity: 1 !important;
+            .model-row__name {
+                color: $black !important;
+                border-bottom-color: $color_blue;
+            }
+        }
+
+        &:hover {
+            opacity: .7;
+            .model-row__name {
+                color: $color_blue;
+            }
+        }
+
+        @include below(1440px) {
+            margin: 0 20px;
+        }
+
+        @include below(1024px) {
+            width: 260px;
+            min-width: 260px;
+            margin: 0 50px;
+        }
+
+        @include below(768px) {
+            width: 150px;
+            min-width: 150px;
+            margin: 0 25px;
+        } 
+    }
+    
+    &__img {
+        margin-bottom: 10px;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__name {
+        display: inline-block;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #F2F2F2;
+        transition: all .3s linear;
+        color: #000;
+        @include below(768px) {
+            font-size: 14px;
+            line-height: 15px;
+        }
+    }
+}

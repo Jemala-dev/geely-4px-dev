@@ -1,0 +1,1 @@
+export const groupOfThousands = (num) => num.replace(/\B(?=(\d{3})+(?!\d))/g, " ")

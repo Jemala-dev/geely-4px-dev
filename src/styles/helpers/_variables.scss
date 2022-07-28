@@ -1,0 +1,38 @@
+$base_font: Arial, sans-serif;
+$accent_font: "NeoSansCyr", $base_font;
+
+$black: #000000;
+$white: #fff;
+
+$color_blue: #0066B2;
+
+$color_grey: #9CA9B3;
+$color_grey2: #d9d9d6; 
+$color_yellow: #efdf00;
+
+$color_red: #e4002b;
+
+$body_width: 1920px;
+
+$breaks: (
+  desktop_lg: 1600px,
+  desktop: 1440px,
+  laptop: 1380px,
+  tablet: 1100px,
+  tablet_md: 1024px,
+  mobile: 768px,
+  mobile_sm: 575px,
+  mobile_xs: 479px,
+  mobile_xxs: 375px,
+);
+
+$container: (
+  desktop_lg: 1660px,
+  desktop: 1278px,
+  laptop: 1100px,
+  tablet: 768px,
+  mobile: 345px,
+  mobile_xs: 280px,
+);
+
+$trns: all 0.2s linear;

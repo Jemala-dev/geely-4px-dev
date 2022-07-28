@@ -1,0 +1,147 @@
+@import "main-bx";
+
+.footer {
+    
+    &__top {
+        padding: 60px 0;
+
+        @include below(768px) {
+            padding: 25px 0;
+        }
+    }
+    
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__term {
+        display: flex;
+        align-items: center;
+
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 26px;
+
+        @include below(768px) {
+            font-size: 18px;
+            line-height: 100%;
+        }
+
+        &.is-open {
+            .footer__term-icon {
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__term-icon {
+        height: 16px;
+        width: 16px;
+        position: relative;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        border: 1px solid #000;
+        border-radius: 3px;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+
+            width: 8px;
+            height: 1px;
+            border-radius: 5px;
+            background-color: #000;
+        }
+
+        &::after {
+            transform: rotate(90deg);
+            transition: all .3s linear;
+        }
+    }
+
+    &__social-title {
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
+
+    &__social-wrap {
+        display: flex;
+        align-content: center;
+        justify-content: flex-end;
+        a {
+            width: 20px;
+            height: 20px;
+            display: block;
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            img {
+                width: 100%;
+            }
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__terms {
+        display: none;
+        padding-top: 50px;
+
+        @include below(768px) {
+            padding-top: 25px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #000;
+        }
+
+        p a {
+            color: #000;
+            text-decoration: underline;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__terms-mb {
+        margin-bottom: 24px;
+    }
+
+
+    &__bottom {
+        background-color: #3C3E40;
+        padding: 20px 0;
+    }
+
+    &__logo {
+        margin-right: 13px;
+    }
+
+    &__copy {
+        display: flex;
+        align-items: center;
+    }
+
+    &__copy-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}

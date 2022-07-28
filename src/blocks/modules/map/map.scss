@@ -1,0 +1,168 @@
+@import "main-bx";
+
+.map {
+    position: relative;
+    &__container {
+        height: 570px;
+        @include below(768px) {
+            height: 320px;
+        }
+    }
+
+    #ymaps {
+        .ymaps-2-1-79-ground-pane canvas {
+            filter: grayscale(1);
+        }
+
+        &:hover {
+            .ymaps-2-1-79-ground-pane canvas {
+                filter: grayscale(0);
+            }
+        }
+    }
+
+    &__content {
+        background-color: #F9F9FA;
+        padding: 30px 30px 45px;
+
+        width: 100%;
+        max-width: 650px;
+    
+        position: absolute;
+        top: 90px;
+        left: 130px;
+        z-index: 100;
+
+        @include below(1320px) {
+            left: 20px;
+        }
+
+        @include below(768px) {
+            position: static;
+            max-width: 100%;
+            padding: 20px 20px 30px;
+        }
+    }
+
+    &__title {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        text-align: center;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            width: 80px;
+            height: 2px;
+            background-color:#0066B2;
+        }
+
+        @include below(768px) {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        @include below(768px) {
+            flex-direction: column;
+        }
+        &_ai-center {
+            align-items: center;
+
+            @include below(768px) {
+                flex-direction: row;
+                align-items: baseline;
+            }
+        }
+    }
+
+    &__col {
+
+        &:first-of-type {
+            width: 100%;
+            max-width: 304px;
+            margin-right: 50px;
+            margin-bottom: 52px;
+
+            @include below(768px) {
+                max-width: 100%;
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+        }
+
+        &:last-of-type {
+            width: 100%;
+            max-width: 220px;
+
+            @include below(768px) {
+                max-width: 100%; 
+            }
+        }
+
+        .map__row {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+
+                @include below(768px) {
+                   margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+        margin-right: 20px;
+        img {
+            width: 100%;
+        }
+    
+        @include below(1320px) {
+            width: 24px;
+            min-width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__prop {
+
+    }
+
+    &__prop-key {
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    &__prop-val {
+        font-weight: 400;
+    }
+
+    &__route {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        color: #000;
+        img {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include below(1320px) {
+            margin-top: 30px;
+        }
+    }
+}

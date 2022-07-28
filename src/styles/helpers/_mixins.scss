@@ -1,0 +1,60 @@
+@mixin h1() {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@mixin font-face($name, $path, $weight,  $style) {
+    @font-face {
+        font-family: $name;
+        src: url($path + ".woff2") format("woff2"),
+        url($path + ".woff") format("woff");
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@mixin link-state() {
+    display: inline-flex;
+    align-items: center;
+    
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 11px;
+    color: #000;
+    border-radius: 5px;
+    
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+        width: 10px;
+        height: 10px;
+        margin-bottom: -3px;
+        margin-left: 5px;
+    }
+}
+
+@mixin below($width) {
+    @media (max-width: $width) {
+      @content;
+    }
+}
+
+@mixin above($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin below_and_above($max, $min) {
+    @media (max-width: $max) and (min-width: $min) {
+        @content;
+    }
+}
+  

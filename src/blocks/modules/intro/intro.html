@@ -1,0 +1,15 @@
+<section class="intro" >
+    <div class="intro__slider js-intro-slider" data-icons="./img/sprites/sprite.svg#icon_prev, ./img/sprites/sprite.svg#icon_next">
+        @@for (var i = 0; i < 6; i++) {
+            @@include("./item.html")
+        }
+    </div>
+
+    <div class="intro__nav">
+        <div class="intro__nav-btn js-intro-nav"></div>
+        <div class="intro__nav-counter">
+            <div class="intro__nav-current js-intro-current">1/</div>
+            <div class="intro__nav-total">6</div>
+        </div>
+    </div>
+</section>

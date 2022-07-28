@@ -1,0 +1,111 @@
+@import "main-bx";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+*,
+*::before,
+*::after {
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: map-get($container, desktop_lg);
+  margin: 0 auto;
+
+  @include below(1700px) {
+    padding: 0 20px;
+  }
+
+  @include below(1320px) {
+    max-width: map-get($container, laptop);
+    padding: 0 25px;
+  }
+
+  @include below(768px) {
+    max-width: map-get($container, mobile);
+    padding: 0;
+  }
+
+  @include below(356px) {
+    padding: 0 15px;
+  }
+}
+
+.container-xlg {
+  max-width: $body_width;
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  font-family: $accent_font !important;
+  font-size: 16px;
+  line-height: 17px;
+  background-color: #fff;
+  width: 100%;
+
+  color: $black;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  transition: $trns;
+}
+
+.main {
+  // min-height: calc(100vh - 662px);
+  // @include below(768px) {
+  //   min-height: calc(100vh - 476px);
+  // }
+}
+
+:focus {
+  outline-style: none;
+  outline-width: 0 !important;
+  outline-color: none !important;
+}
+
+input,
+button,
+textarea,
+fieldset {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+img {
+  display: block;
+  // width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s linear;
+}

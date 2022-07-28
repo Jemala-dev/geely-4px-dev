@@ -1,0 +1,239 @@
+@import "main-bx";
+
+.form {
+    position: relative;
+
+    &.is-loading {
+        .form__preloader {
+            display: flex;
+        }
+    }
+
+    &.is-success {
+        display: none !important;
+        & ~ .form-success {
+            display: block !important;
+        } 
+
+        button {
+            pointer-events: none;
+        }
+    }
+
+    & ~ .form-success {
+        display: none !important;
+        padding: 0 0 20px;
+
+        @include below(768px) {
+            padding: 20px 0;
+        }
+    }
+
+
+    &__preloader {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 400;
+        background-color: rgba(255, 255, 255, .5);
+        display: none;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__label {
+        display: block;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    &__place {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+        color: #B0B2B3;
+        padding: 5px;
+        background-color: #fff;
+        transition: all .2s linear;
+    }
+
+    &__input,
+    .select {
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #000000;
+        border-radius: 4px 10px 4px 4px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 19px;
+        padding: 15px;
+        color: transparent;
+        transition: all .2s linear;
+        &::placeholder {
+            transition: all .2s linear;
+            color: transparent;
+        }
+        &:focus,
+        &.is-valid {
+            &::placeholder {
+                color: #000000;
+            }
+            color: #000000;
+            & ~ .form__place {
+                top: -10px;
+            }
+        }
+
+        &.is-error {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+            & ~ .form__error {
+                display: block;
+            }
+
+            & ~ .form__error-icon {
+                display: block;
+            }
+            & ~ .form__place {
+                top: -10px;
+            }
+            &::placeholder {
+                color: #FF0000;
+            }
+        }
+
+        &.is-invalid {
+            color: #FF0000;
+            border-bottom-color: #FF0000;
+            & ~ .form__error-icon {
+                display: block;
+            }
+
+            & ~ .form__invalid {
+                display: block;
+            }
+            & ~ .form__place {
+                top: -10px;
+            }
+        }
+
+        &.is-success {
+            border-bottom-color: #1EF1C6;
+            & ~ .form__success-field {
+                display: block;
+            }
+        }
+
+        &:disabled {
+            opacity: .7;
+            filter: grayscale(100%);
+        }
+    }
+
+    &__error,
+    &__invalid {
+        display: none;
+        font-size: 14px;
+        line-height: 1.2;
+        color: #FF0000;
+        margin-top: 10px;
+    }
+
+    &__error-icon {
+        position: absolute;
+        top: 15px;
+        right: -14px;
+        font-size: 24px;
+        line-height: 26px;
+        color: #FF0000;
+        display: none;
+
+        @include below(768px) {
+            right: 10px;
+        }
+    }
+
+    &__success-field {
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        display: none;
+
+        @include below(768px) {
+            right: 10px;
+        }
+    }
+
+    &__btn {
+        margin-top: 10px;
+    }
+
+    &__policy {
+        position: relative;
+        display: block;
+        margin-top: 30px;
+
+        input {
+            &:checked {
+                & ~ .form__policy-mark {
+                    background-color: #0066B2;
+                }
+            }
+
+            &.is-error {
+                & ~ .form__policy-mark {
+                    border-color: #FF0000;
+                }
+
+                & ~ .form__error {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__policy-mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: transparent;
+        border: 1px solid #0066B2;
+        border-radius: 50%;
+        cursor: pointer;
+        svg {
+            width: 9px;
+            height: 9px;
+        }
+    }
+
+    &__policy-text {
+        display: inline-block;
+        margin-left: 25px;
+        font-size: 12px;
+        line-height: 140%;
+        color: rgba(0, 0, 0, 0.4);
+
+        a {
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,344 @@
+@import "main-bx";
+
+.model {
+    &__container {
+        width: 100%;
+        max-width: 1278px;
+        margin: 0 auto;
+        padding: 60px 0 73px;
+
+        @include below(768px) {
+            padding: 30px 0 60px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 120px;
+
+            @include below(768px) {
+                margin-bottom: 50px;
+            }
+        }
+
+        @include below(975px) {
+            flex-direction: column;
+        }
+    }
+
+    &__catalog {
+        width: 54.6%;
+
+        @include below(1024px) {
+            width: 57%;
+        }
+
+        @include below(975px) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        @include below(768px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img {
+        min-height: 390px;
+
+        @include below(1320px) {
+            min-height: 33px;
+        }
+
+        @include below(768px) {
+            min-height: 193px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        width: 38.8%;
+        
+        @include below(1320px) {
+            width: 42%;
+        }
+
+        @include below(975px) {
+            width: 60%;
+        }
+
+        @include below(768px) {
+            width: 100%;
+        }
+    }
+
+    &__step {
+        display: flex;
+        align-items: center;
+        margin: 87px -18.5px 30px;
+
+        @include below(1320px) {
+            margin: 40px -15px 30px;
+        }
+
+        @include below(768px) {
+            margin: 26px 0 26px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__step-item {
+        display: flex;
+        align-items: center;
+        margin: 0 18.5px;
+        @include below(1320px) {
+            margin: 0 15px;
+        }
+
+        @include below(768px) {
+            margin: 0;
+        }
+
+        &:first-of-type {
+            @include below(768px) {
+                margin-bottom: 18px;
+            }
+        }
+    }
+
+    &__step-icon {
+        margin-right: 10px;
+    }
+
+    &__title {
+        font-size: 56px;
+        line-height: 60px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 10px;
+        white-space: nowrap;
+
+        @include below(1320px) {
+           font-size: 50px;
+        }
+
+        @include below(768px) {
+            font-size: 28px;
+            line-height: 30px;
+        }
+    }
+
+    &__price {
+        font-size: 40px;
+        line-height: 48px;
+        color: $color_blue;
+        margin-bottom: 24px;
+        white-space: nowrap;
+
+        @include below(768px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    &__benefit {
+        display: flex;
+        align-items: center;
+        &:nth-child(3) {
+            margin-bottom: 20px;
+
+            @include below(768px) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__benefit-icon {
+        width: 32px;
+        height: 32px;
+
+        @include below(768px) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__benefit-price {
+       margin-left: 16px;
+
+       span {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);;
+        }
+
+       @include below(1320px) {
+            margin-left: 10px;
+            white-space: nowrap;
+       }
+
+       @include below(768px) {
+            font-size: 16px;
+            line-height: 100%
+       }
+      
+    }
+
+    &__buttons {
+        @include below(357px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__btn {
+        width: 48.3%;
+        white-space: nowrap;
+
+        @include below(357px) {
+            width: 100%;
+        }
+
+        &:last-of-type {
+            margin-left: 16px;
+
+            @include below(1320px) {
+                margin-left: 10px;
+            }
+
+            @include below(357px) {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    }
+
+
+    &__colors {
+        display: flex;
+        justify-content: center;
+    
+        margin: 0 -16px;
+        @include below(768px) {
+            margin: 0 -10px;
+        }
+    }
+
+    &__color {
+        width: 32px;
+        height: 32px;
+        margin: 0 16px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        @include below(768px) {
+            flex-shrink: 0;
+            width: 22.4px;
+            height: 22.4px;
+            margin: 0 10px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            border: 1px solid #1EF1C6;
+            opacity: 0;
+            @include below(768px) {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &.model__color_active {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        // Coolray colors
+
+        &[data-color="red"] {
+            background-color: #FF2F32;
+        }
+        &[data-color="blue"] {
+            background-color: #2470FF;
+        }
+        &[data-color="grey"] {
+            background-color: #D2D2D5;
+        }
+        &[data-color="light-grey"] {
+            background-color: #E9E8EB;
+        }
+        &[data-color="orange"] {
+            background-color: #E6723F;
+        }
+        &[data-color="yellow"] {
+            background-color: #EFD854;
+        }
+        &[data-color="light-blue"] {
+            background-color: #8BC8F8;
+        }
+        &[data-color="dark"] {
+            background-color: #2E2D2F;
+        }
+
+        // Coolray colors
+
+
+        // Atlas Colors 
+        &[data-color="blue_2"] {
+            background-color: #3459A3;
+        }
+        &[data-color="red_2"] {
+            background-color: #C03A31;
+        }
+        &[data-color="dark_2"] {
+            background-color: #4B4C4F;
+        }
+        &[data-color="light-dark_2"] {
+            background-color: #878890;
+        }
+        &[data-color="grey_2"] {
+            background-color: #BBBCC0;
+        }
+        &[data-color="light-grey_2"] {
+            background-color: #E4E6E8;
+        }
+        // Atlas Colors 
+
+
+        // Tugella Colors 
+        &[data-color="blue_3"] {
+            background-color: #334A89;
+        }
+        &[data-color="light-dark_3"] {
+            background-color: #565E67;
+        }
+        &[data-color="red_3"] {
+            background-color: #B40A1B;
+        }
+        &[data-color="dark_3"] {
+            background-color: #121213;
+        }
+        &[data-color="white_3"] {
+            background-color: #F3F3F3;
+        }
+        &[data-color="grey_3"] {
+            background-color: #768497;
+        }
+        // Tugella Colors 
+    }
+}

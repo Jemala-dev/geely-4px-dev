@@ -1,0 +1,186 @@
+@import "main-bx";
+
+.intro {
+    position: relative;
+
+    &__slider {
+        margin-bottom: 0 !important;
+        @include below(768px) {
+            height: 250px;
+        }
+
+        .slick-dots {
+            bottom: 10px;
+
+            li {
+                width: 8px;
+                height: 8px;
+                background-color: #fff;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                transition: all .3s linear;
+                &.slick-active {
+
+                    background-color: transparent;
+                    border-color: $color_blue;
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    display: block;
+            
+                    border-radius: 50%;
+                    background-color: $color_blue;
+                    opacity: 0;
+                    transition: all .3s linear;
+                }
+            }
+
+            button {
+                display: none;
+            }
+        }
+    }
+
+    &__slider-item {
+        @include below(768px) {
+            height: 250px;
+        }
+        &:not(:first-child) {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &.slick-slide {
+            @include below(768px) {
+                height: 250px;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 58px;
+        left: calc(17% - 155px);
+        z-index: 10;
+
+        @include below(1024px) {
+            left: auto;
+            bottom: auto;
+            top: 60%;
+            right: 15px;
+        }
+
+        @include below(768px) {
+            display: none;
+        }
+    }
+
+    &__nav-btn {
+        display: flex;
+        align-items: center;
+        margin-left: -16px;
+
+        @include below(1024px) {
+            display: none;
+        }
+
+        .slick-arrow {
+            margin-left: 16px;
+            position: static;
+            width: 40px;
+            height: 40px;
+            transform: translate(0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.7);
+
+            &::before {
+                display: none !important;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: #666666;
+                stroke-width: 3px;
+                transition: all .3s linear;
+            }
+
+            &:hover,
+            &:focus {
+                background: rgba(255, 255, 255, 0.8);
+                
+                svg {
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+
+    &__nav-counter {
+        font-weight: 400;
+        display: flex;
+        align-items: baseline;
+        margin-left: 40px;
+    }
+
+    &__nav-current {
+        font-size: 32px;
+        line-height: 34px;
+        color: #fff;
+
+        @include below(1024px) {
+            font-size: 20px;
+            line-height: 1;
+        }
+    }
+
+    &__nav-total {
+        font-size: 16px;
+        line-height: 17.18px;
+        color: #9CA9B3;
+    }
+
+
+    &__side-menu {
+        position: absolute;
+        top: calc(40% - 70px);
+        right: 20px;
+        z-index: 10;
+
+        @include below(1024px) {
+            position: static;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        @include below(350px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
